@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This package provides an easy way to manage callbacks in your code.
+This package provides an easy way to manage callback events in your code.
 
 ## Installation
 
@@ -19,7 +19,9 @@ meteor remove jalik:callback-helper
 ## Creating a callback helper
 
 ```js
-helper = new CallbackHelper();
+import {CallbackHelper} from 'meteor/jalik:callback-helper';
+
+let helper = new CallbackHelper();
 ```
 
 ## Adding callbacks
