@@ -1,15 +1,17 @@
 export class CallbackHelper {
 
-    private callbacks = [];
+    constructor() {
+        this.callbacks = [];
+    }
 
-    public add(callback) {
+    add(callback) {
         if (typeof callback !== 'function') {
             throw new TypeError("Callback is not a function");
         }
         this.callbacks.push(callback);
     }
 
-    public call() {
+    call() {
         if (arguments.length) {
             var args = Array.prototype.slice.call(arguments);
             var context = args.shift();
@@ -20,11 +22,11 @@ export class CallbackHelper {
         }
     }
 
-    public clear() {
+    clear() {
         this.callbacks = [];
     }
 
-    public remove(callback) {
+    remove(callback) {
         var index = this.callbacks.indexOf(callback);
 
         if (index > -1) {
@@ -32,7 +34,7 @@ export class CallbackHelper {
         }
     }
 
-    public size() {
+    size() {
         return this.callbacks.length;
     }
 }
